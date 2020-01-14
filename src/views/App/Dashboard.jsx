@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom';
-import { Layout, Row, Col } from 'antd';
+import { Layout, Row, Col, Icon } from 'antd';
 import { GridComponent } from '../../components/globally/GridComponent';
 import { Example1 } from '../../components/hooks/example-1';
+import { Home } from '../Home/Home';
 import '../../styles/Dashboard.scss';
 const { Footer, Content } = Layout;
 
@@ -14,10 +15,19 @@ function App() {
                <Row>
                   <Col span={14}>
                      <h3> Go to an example ... </h3>
-                     <GridComponent>
-                        {' '}
-                        <Link to="/example-1">Ex #1</Link>{' '}
-                     </GridComponent>
+                     <div className="gridContainer">
+                        <GridComponent yellow>
+                           {' '}
+                           <Link to="/">
+                              {' '}
+                              <Icon type="home" />
+                           </Link>{' '}
+                        </GridComponent>
+                        <GridComponent>
+                           {' '}
+                           <Link to="/example-1">Ex #1</Link>{' '}
+                        </GridComponent>
+                     </div>
                   </Col>
 
                   <Col span={10}>
@@ -25,9 +35,11 @@ function App() {
                      <Switch>
                         <Route path="/example-1">
                            {' '}
-                           <>
-                              <Example1 />
-                           </>
+                           <Example1 />
+                        </Route>
+                        <Route path="/">
+                           {' '}
+                           <Home />
                         </Route>
                      </Switch>
                   </Col>

@@ -5,7 +5,7 @@ const GridComponent = styled.section`
    background: ${props => (props.yellow ? '#FDD835' : '#29b6f6')} !important;
    display: flex;
    justify-content: center;
-   max-width: 10%;
+   width: 8%;
    height: 5em;
    align-items: center;
    border-radius: 10px;
